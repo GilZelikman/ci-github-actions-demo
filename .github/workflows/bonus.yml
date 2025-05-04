@@ -21,10 +21,10 @@ jobs:
         with:
           python-version: 3.9  # Set up Python 3.9
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Install any required dependencies
+#      - name: Install dependencies
+#        run: |
+#          python -m pip install --upgrade pip
+#          pip install -r requirements.txt  # Install any required dependencies
 
       - name: Run tests
         run: |
