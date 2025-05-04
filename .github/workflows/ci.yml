@@ -3,7 +3,7 @@ name: CI Workflow with Matrix Builds
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   test:
