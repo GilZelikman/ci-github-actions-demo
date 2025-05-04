@@ -1,23 +1,28 @@
-name: Python Test Workflow
+name: CI Workflow with Greeting and Tests
 
 on:
   push:
     branches:
       - main
-      - master
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out code
         uses: actions/checkout@v3
 
+      - name: Print greeting
+        run: echo "Hello, CI with GitHub Actions!"
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+
+#      - name: Install dependencies (optional)
+#        run: pip install -r requirements.txt || true
 
       - name: Run tests
         run: python -m unittest discover
