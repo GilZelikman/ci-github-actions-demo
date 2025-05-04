@@ -61,6 +61,16 @@ tar xzf ./actions-runner-linux-x64-2.315.0.tar.gz
 ./run.sh
 ```
 
+### My Runner Bonus Workflow
+My Runner is a Docker Continer of ubuntu:latest image that i run locally on my PC 
+After i did my procdure i have create a new workflow called bonus.yml 
+What the Worflow does and runs on self-hosteed labelK:
+
+- Triggered on every push to the `main` branch.
+- Checks out the repository code using `actions/checkout@v3`.
+- Sets up Python 3.9 
+- Runs the unit tests using Python’s built-in `unittest` framework.
+
 
 ---
 
