@@ -41,6 +41,29 @@ This repository demonstrates a basic Continuous Integration (CI) setup using **G
 
 ---
 
+## ⭐ Bonus Task: Self-Hosted Runner
+
+### What is a Self-Hosted Runner?
+A self-hosted runner is a machine (e.g., your local server or VM) that runs GitHub Actions jobs instead of GitHub's cloud infrastructure.
+
+### 🔧 How to Set One Up
+
+1. **Go to your repo on GitHub → Settings → Actions → Runners → Add Runner**
+
+2. **Choose OS** (Linux/Windows/macOS) and architecture
+
+3. **Follow GitHub’s instructions**, e.g. for Linux:
+```bash
+mkdir actions-runner && cd actions-runner
+curl -o actions-runner-linux-x64-2.315.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.315.0/actions-runner-linux-x64-2.315.0.tar.gz
+tar xzf ./actions-runner-linux-x64-2.315.0.tar.gz
+./config.sh --url https://github.com/your-username/your-repo --token YOUR_TOKEN_HERE
+./run.sh
+```
+
+
+---
+
 ## 🛠 GitHub Actions Workflow
 
 
