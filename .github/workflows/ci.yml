@@ -8,9 +8,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-22.04
+
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, 3.10]
+        python-version: ["3.7", "3.8", "3.9", "3.10"]  # Ensure correct versioning with quotes
 
     steps:
       - name: Check out code
@@ -21,6 +22,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Show Python version
+        run: python --version  # Check the Python version in the environment
+
       - name: Print greeting
         run: echo "Hello, CI with GitHub Actions! Running on Python ${{ matrix.python-version }}"
 
@@ -29,4 +33,3 @@ jobs:
 
       - name: Run tests
         run: python -m unittest discover
-
