@@ -39,6 +39,7 @@ It performs the following steps:
 
 ## 📁 Project Structure
 
+```
 ├── .github/
 │ └── workflows/
 │ └── ci.yml
@@ -47,6 +48,7 @@ It performs the following steps:
 ├── requirements.txt (optional)
 └── README.md
 
+```
 ---
 
 ## 💡 Run Tests Locally
