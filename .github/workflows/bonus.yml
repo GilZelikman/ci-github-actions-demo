@@ -1,0 +1,31 @@
+name: Test Bonus Workflow
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on PR targeting the main branch
+
+jobs:
+  test:
+    runs-on: [self-hosted, linux]  # Specifies that the job should run on your self-hosted Linux runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Checks out the repository
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9  # Set up Python 3.9
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Install any required dependencies
+
+      - name: Run tests
+        run: |
+          python -m unittest discover  # Run tests using the unittest framework
