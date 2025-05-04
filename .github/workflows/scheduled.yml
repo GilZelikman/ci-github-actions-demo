@@ -1,0 +1,16 @@
+name: Daily Scheduled Workflow
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at 00:00 UTC
+
+jobs:
+  scheduled-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Print scheduled build message
+        run: echo "Scheduled build completed successfully!"
