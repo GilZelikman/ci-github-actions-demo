@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu1-latest
+    runs-on: ubuntu-latest
     env:
     # Undefined secret
       SSH_KEY: ${{ secrets.MISSING_SECRET }}
